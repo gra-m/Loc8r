@@ -1,0 +1,82 @@
+extends layout
+
+block content
+	.row.banner
+		.col-12
+			h1 Starcups
+	.row
+		.col-12.col-lg-9
+			.row
+				.col-12.col-md-6
+					p.rating
+						i.fas.fa-star
+						i.fas.fa-star
+						i.fas.fa-star
+						i.fas.fa-star
+						i.fas.fa-star
+					p 125 High Street, Reading, RG6 1PS
+					.card.card-primary
+						.card-block
+							h2.card-title Opening Hours
+							p.card-text Monday - Friday : 7.00am - 7.00pm
+							p.card-text Saturday : 8:00am - 5.00pm
+							p.card-text Sunday : closed
+					.card.card-primary
+						.card-block
+							h2.card-title Facilities
+							span.badge.badge-default
+								i.fa.fa-check
+								| &nbsp;Hot drinks
+							| &nbsp;&nbsp;
+							span.badge.badge-default
+								i.fa.fa-check
+								| &nbsp;Food
+							| &nbsp;&nbsp;
+							span.badge.badge-default
+								i.fa.fa-check
+								| &nbsp;Premium wifi
+							| &nbsp
+				.col-12.col-md-6.location-map
+					.card.card.card-primary
+						.card-block
+							h2.card-title Go for a walk, use your phone..
+							img.googlemap.rounded(src="/images/iso-republic-man-in-field-at-sunset.jpg")
+			.row
+				.col-12
+					.card.card-primary.review-card
+						.card-block
+							a.btn.btn-primary.float-end(href='/location/review/new') Participate
+							h2.card-title Customer Reviews
+							.row.review
+								.col-12.review-header
+									span.rating
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										span.m-1.review Author Ming-the-Merciless
+										small.m-3.review 09 March 2022
+								.col-12
+									p That's my wife you're talking about, have at thou! Scum!
+							.row.review
+								.col-12.review-header
+									span.rating
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										span.m-1.review Author Graham Duthie
+										small.m-3.review 14 February 2022
+								.col-12
+									p Coffee's shit, just fancy the owner.
+				.col-12.col-lg-3
+					p.lead
+						| Starcups is on Loc8r because there was a need to get it on Loc8r as a part of someone's learning process.
+					p
+					| If you've been and you like it, you are deluded, it does not exist, and even if it did, don't leave a review, really, who cares?
+
+
+
+
