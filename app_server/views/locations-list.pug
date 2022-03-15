@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+      small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+         .card-block
+           h4
+             a.location-name(href="/location")= location.name
+             small &nbsp
+               - for (let i = 1; i <= location.rating; i++)
+                 i.fas.fa-star
+               - for (let i = location.rating; i < 5; i++)
+                 i.far.fa-star
+             span.badge.badge-pill.badge-default.float-end= location.distance
+           p.address= location.address
+           .facilities
+           each facility in location.facilities
+               span.badge.badge-default= facility
+    .col-12.col-md-4
+        p.lead Loc8r helps you find places to work when out and about.Perhaps with coffee, cake or a pint? Let Loc8r help you spend money rather than just look at your phone.
+
+
