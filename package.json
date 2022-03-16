@@ -14,15 +14,12 @@
     "cookie-parser": "~1.4.4",
     "debug": "~4.1.0",
     "express": "^4.16.1",
+    "http-errors": "^2.0.0",
     "morgan": "^1.9.1",
     "pug": "^3.0.2",
     "serve-favicon": "~2.5.0"
   },
-  "devDependencies": {
-    "express": "^4.16.1"
-  },
   "description": "First MEAN Project - Follow Along -> Getting MEAN with Mongo, Express, Angular and Node",
-  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gra-m/Loc8r.git"
