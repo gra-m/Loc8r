@@ -1,16 +1,24 @@
-# cg_cwm_sl_examples
+# Loc8r 
 
-Give brief synopsis
+###Firsts:
+* Node Back-end, not just for Angular 
+* Pug 
+* Express
+* [Heroku and Heroku with Git](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
+* [Heroku deployment problems](https://devcenter.heroku.com/articles/troubleshooting-node-deploys)
+* Continuous Deployment
 
-Org: Gram-Inc
+### Org:
+Gra-m
 
 By: Gram 
 
-On: 11/02/2022
+On: March 8th
 
 ### Project resources used or useful
 
-Gitlab - grammed
+GitHub -
+Heroku deployment -
 
 [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Adam P")
 
@@ -41,4 +49,3 @@ Heading 3:
 
 <a id="4"></a>
 Heading 4:
-    
