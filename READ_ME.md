@@ -6,6 +6,8 @@
 * Express
 * [Heroku and Heroku with Git](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
 * [Heroku deployment problems](https://devcenter.heroku.com/articles/troubleshooting-node-deploys)
+  * Repo was just on Heroku, Heroku deploy broke at same time as dual repo (github/heroku)
+  * Updated to node 17.7.1 as heroku using this..
 * Continuous Deployment
 
 ### Org:
