@@ -1,0 +1,28 @@
+mixin outputRating(rating)
+  - for (let i = 1; i <= rating; i++)
+    i.fas.fa-star
+  - for (let i = rating; i < 5; i++)
+    i.far.fa-star
+
+
+mixin openingHours(openingHours, header)
+  - if(header)
+    h2.card-title Opening Hours
+  - for (let i = 0; i <= openingHours.length; i++)
+     p.card-text= openingHours[i]
+
+
+mixin facilities(facilities, header)
+  - if(header)
+    h2.card-title Facilities
+  - for (let i = 0; i <= facilities.length; i++)
+    small &nbsp;
+    span.badge.badge-default= facilities[i]
+
+    //INFO: mixin test(reviews, header)
+      - if(header)
+        h2.card-title Customer Reviews
+      - for (let i = 0; i <= reviews.length; i++)
+        .row.review
+        .col-12.review-header
+          p= reviews[i].author [CANNOT dig like this. Returns undefined]

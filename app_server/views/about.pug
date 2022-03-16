@@ -3,12 +3,7 @@ extends layout
 block content
 	.row.banner
 		.col-12
-			h1 About Loc8r
+			h1= pageHeader.title
 	.row
 		.col-12.col-lg-8
-			p
-				| Loc8r was created as part of my learning the MEAN stack, which I've got to say has been pretty enjoyable so far.
-				| <br/><br/>
-				| Pug is cool. <br/>
-				| Express works and I've learnt to fully separate M V and C in it. <br/>
-				| Looking forward to getting started with Mongo DB and creating a REST API in Node.<br/>
+			p= otherContent.extra1

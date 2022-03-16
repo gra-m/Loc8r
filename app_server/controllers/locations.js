@@ -6,6 +6,13 @@ const homelist = function(req, res) {
             title: 'Loc8r',
             strapline: 'Find places to work with wifi near you!',
         },
+        otherContent: {
+           shortAbout: 'Loc8r helps you find places to work when out and about. ' +
+                    'Perhaps with coffee, cake or a pint? Let Loc8r' +
+                    ' help you spend money rather than just look at your phone, ' +
+                    'using mobile internet and musing at the ever increasing simplicity' +
+                    'of your life.. Why is it all so complicated?'
+        },
         locations: [{
             name: 'Starcups',
             address: '123 Hupe Street, Yeading, RG4 1PS',
@@ -30,15 +37,55 @@ const homelist = function(req, res) {
             rating: 5,
             facilities: ['Hot drinks', 'Amazing wifi', "Infinite-refills", "Curated music experience" ],
             distance: '7.5km'
-        },]
+        }]
     }
     )};
 
 /*GET locationInfo*/
-const locationInfo = (req, res) => res.render('locationInfo', {title: 'Location Info'});
+const locationInfo = (req, res) => res.render('location-detail', {
+    title: 'Loc8r - Is this the place?',
+    pageHeader: {
+        title: 'Go for a walk, use your phone..',
+        strapline: '',
+    },
+    otherContent: {
+        extra1: 'Starcups is on Loc8r because there was a need to get it on Loc8r as a part of someone\'s learning process.',
+        extra2: 'If you\'ve been and you like it, you are deluded, it does not exist, and even if it did, don\'t leave a review, really, who cares?',
+    },
+    location: {
+        name: 'Schuing-shcuang Starcups',
+        address: '123 Hupe Street, Yeading, RG4 1PS',
+        openingHours: ['Monday - Friday : 7.00am - 7.00pm', 'Saturday : 8.00am - 5.00pm', 'Sunday : closed'],
+        rating: 3,
+        facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+        distance: '100m',
+        customerReviews: [{
+            date: '09 March 2022',
+            author: 'Ming-the-Merciless',
+            rating: 4,
+            reviewText: 'I came, I drank, I applied.. Moustache \'definition enhancement\' product in the immaculately ' +
+                'clean toilets. Pointy. Fresh. Fine indeed!'
+        },{
+            date: '14 February 2022',
+            author: 'Graham Duthie',
+            rating: 5,
+            reviewText: 'Amazing coffee and friendly staff'
+        }]
+    }
+});
 
 /*GET addReview*/
-const addReview = (req, res) => res.render('addReview', {title : 'Add a Review'});
+const addReview = (req, res) => res.render('add-review', {
+    title : 'What did you think?',
+    pageHeader: {
+        title: `Review`,
+        strapline: '',
+    },
+    otherContent: {},
+    location: {
+        name: 'Starcups'
+    }
+});
 
 
 module.exports = {

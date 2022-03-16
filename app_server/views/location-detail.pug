@@ -1,0 +1,45 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+	.row.banner
+		.col-12
+			h1= location.name
+	.row
+		.col-12.col-lg-9
+			.row
+				.col-12.col-md-6
+					p.rating
+					+outputRating(location.rating)
+					p= location.address
+					.card.card-primary
+						.card-block
+							+openingHours(location.openingHours, true)
+					.card.card-primary
+						.card-block
+							+facilities(location.facilities, true)
+				.col-12.col-md-6.location-map
+					.card.card.card-primary
+						.card-block
+							h2.card-title= pageHeader.title
+							img.googlemap.rounded(src="/images/iso-republic-man-in-field-at-sunset.jpg")
+			.row
+				.col-12
+					.card.card-primary.review-card
+						.card-block
+							a.btn.btn-primary.float-end(href='/location/review/new') Participate
+							h2.card-title Customer Reviews
+							each review in location.customerReviews
+								.row.review
+									.col-12.review-header
+										+outputRating(review.rating)
+										span.m-1.review= review.author
+										small.m-3.review= review.date
+									.col-12
+										p= review.reviewText
+				.col-12.col-lg-3
+					p.lead= otherContent.extra1
+					p= otherContent.extra2
+
+
+
+
