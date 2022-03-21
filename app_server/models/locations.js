@@ -1,23 +1,17 @@
 const mongoose = require('mongoose');
 
+// region Why no distance?
 /*
-'http://maps.googleapis.com/maps/api/place?key=AIzaSyBPkFneVxX1ylrSSBl6hNPMk5_8gweS7Ng/staticmap?center=51.025285,4.474310&zoom=17&size=400x350&sensor=false&markers=51.025285,4.474310&scale=2&key=AIzaSyBPkFneVxX1ylrSSBl6hNPMk5_8gweS7Ng'
- */
-/*
+I spent an evening and actually found a google account that would accept my credit card, this in itself was a frustrating experience,
+two accounts failed on CC entry. Then I failed to get a simple map up straight away and at the same time noticed that within 30 minutes of
+playing around some of my credit had already been used. I know that they stop service rather than bill when this credit
+is used up, but I really had enough at that point (late night special) and thought that I would revisit gmaps in the future.
+My main aim for this project has always been MEAN, I can live without distance working for now.
+https://developers.google.com/maps/documentation/api-picker?hl=en-GB
+ 5.3.2. Geographic data in Mongodb == would store this as long/lat coordinates and even create an index based on this data
+Mongo in */
+// endregion
 
-               const CONFIGURATION = {
-                "locations": [
-            {"title":"De Langhestraat","address1":"De Langhestraat","address2":"2800 Mechelen, Belgium","coords":{"lat":51.025285359027386,"lng":4.474310437434372},"placeId":"EidEZSBMYW5naGVzdHJhYXQsIDI4MDAgTWVjaGVsZW4sIEJlbGdpdW0iLiosChQKEgmBbYX1xeXDRxGbr2BdbJlmexIUChIJSSCFUJTlw0cRAFhNL6uZAAQ"}
-                ],
-                "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
-                "mapsApiKey": "AIzaSyBPkFneVxX1ylrSSBl6hNPMk5_8gweS7Ng",
-                "capabilities": {"input":true,"autocomplete":false,"directions":false,"distanceMatrix":false,"details":false}
-            };
-
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPkFneVxX1ylrSSBl6hNPMk5_8gweS7Ng&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cA" async defer></script>
-*/
-
-//AIzaSyBPkFneVxX1ylrSSBl6hNPMk5_8gweS7Ng Restricted
 const locationSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -31,6 +25,13 @@ const locationSchema = new mongoose.Schema({
         max: 5
     },
     distance: Number,
-    facilities: [String]
+    facilities: [String],
+    coords: {
+        type: {type: String},
+        coordinates: [Number]
+    }
 });
+
+locationSchema.index({coords: '2dsphere'}) // define the path 'coords' as having a '2dsphere' index
+// longitude -180 to 180 THEN latitude -90 to 90
 

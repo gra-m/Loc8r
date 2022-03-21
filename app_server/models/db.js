@@ -1,8 +1,8 @@
+//This file is itself required by app.js so runs on startup.
 require('./locations')
 const mongoose = require('mongoose');
 
 
-//This file is required by app.js so runs on startup.
 
 //Define connection string
 const dbURI = 'mongodb://127.0.0.1:27017/Loc8r';
@@ -21,11 +21,6 @@ mongoose.connection.on('disconnected', () => {
     console.log(`Mongoose disconnected`);
 })
 
-// Just used mongosh
-// then db.shutdownServer()
-// db.hello()
-//db.serverStatus()
-// db.stats()
 
 
 // Monitor Node process events:

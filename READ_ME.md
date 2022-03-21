@@ -27,8 +27,16 @@ On: March 8th
 * git reset --hard remove changes since last commit?
 * git reset --hard commit return to that commit
 
+MongoDb:
+* mongosh 
+* db.shutdownServer()
+* db.hello()
+* db.serverStatus()
+* db.stats()
+
 
 ##Remember
+* [Future start point for gmaps](https://developers.google.com/maps/documentation/api-picker?hl=en-GB)
 Set git remotes in webstorm git push heroku main will not work otherwise (observed behaviour 21032022)
 
 [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Adam P")
@@ -43,7 +51,7 @@ Set git remotes in webstorm git push heroku main will not work otherwise (observ
 Table of Contents:
 
 1. [Chapter 3](#1)
-2. [Heading 2](#2)
+2. [Chapter4](#2)
 
    a. [Sub Heading a](#2a)
 3. [Heading 3](#3)
@@ -61,7 +69,10 @@ Finished @ [a126cfe](https://github.com/gra-m/Loc8r/commit/a126cfe332a62fd6bc81a
 * Passing data from controllers to views
 
 <a id="2"></a>
-Heading 2:
+##Chapter 4:
+
+* npm i mongoose
+* 
 
 <a id="2a"></a>
 SubHeading 2a:
