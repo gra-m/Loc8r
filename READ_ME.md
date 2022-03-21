@@ -19,14 +19,21 @@ On: March 8th
 
 ### Project resources used or useful
 
-GitHub -
-Heroku deployment -
+* heroku apps
+* git push heroku app name
+* git reset HEAD^ blat the last commit
+* git reset --soft unstage files
+* git reset --hard remove changes since last commit?
+* git reset --hard commit return to that commit
 
 [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Adam P")
 
 [Stack Edit](https://stackedit.io "31/08")
 
 [Dillinger](https://dillinger.io "until you are off of visible page..")
+
+
+
 
 Table of Contents:
 
