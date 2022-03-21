@@ -13,32 +13,47 @@ block content
 					p= location.address
 					.card.card-primary
 						.card-block
-							+openingHours(location.openingHours, true)
+							h2.card-title Opening Hours
+							each time in location.openingTimes
+									p.card-text
+										| #{time.days} :
+										if time.closed
+												| closed
+										else
+											| #{time.opening} - #{time.closing}
 					.card.card-primary
 						.card-block
-							+facilities(location.facilities, true)
+							h2.card-title Facilities
+							each facility in location.facilities
+								span.badge.badge-default
+									i.fa.fa-check
+									| &nbsp;#{facility}
+								| &nbsp;
 				.col-12.col-md-6.location-map
 					.card.card.card-primary
 						.card-block
 							h2.card-title= pageHeader.title
 							img.googlemap.rounded(src="/images/iso-republic-man-in-field-at-sunset.jpg")
+							img.googlemap.rounded(src="")
 			.row
 				.col-12
 					.card.card-primary.review-card
 						.card-block
 							a.btn.btn-primary.float-end(href='/location/review/new') Participate
 							h2.card-title Customer Reviews
-							each review in location.customerReviews
+							each review in location.reviews
 								.row.review
 									.col-12.review-header
 										+outputRating(review.rating)
+										//.reviewAuthor class instead m-1? future css?
 										span.m-1.review= review.author
+										//.reviewTimestamp class
 										small.m-3.review= review.date
 									.col-12
-										p= review.reviewText
-				.col-12.col-lg-3
-					p.lead= otherContent.extra1
-					p= otherContent.extra2
+									p !{(review.reviewText).replace(/\n/g, '<br/>')}
+		.col-12.col-lg-3
+			p.lead #{location.name} #{sidebar.context}
+			p= sidebar.callToAction
 
 
 
