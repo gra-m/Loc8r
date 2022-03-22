@@ -18,9 +18,9 @@ block content
 									p.card-text
 										| #{time.days} :
 										if time.closed
-												| closed
+												| &nbsp;closed
 										else
-											| #{time.opening} - #{time.closing}
+											| &nbsp;#{time.opening} - #{time.closing}
 					.card.card-primary
 						.card-block
 							h2.card-title Facilities
