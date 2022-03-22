@@ -6,13 +6,11 @@ const homelist = function (req, res) {
                 title: 'Loc8r',
                 strapline: 'Find places to work with wifi near you!',
             },
-            otherContent: {
-                shortAbout: 'Loc8r helps you find places to work when out and about. ' +
-                    'Perhaps with coffee, cake or a pint? Let Loc8r' +
-                    ' help you spend money rather than just look at your phone, ' +
-                    'using mobile internet and musing at the ever increasing simplicity' +
-                    'of your life.. Why is it all so complicated?'
-            },
+            sidebar: 'Loc8r helps you find places to work when out and about. ' +
+                'Perhaps with coffee, cake or a pint? Let Loc8r' +
+                ' help you spend money rather than just look at your phone, ' +
+                'using mobile internet and musing at the ever increasing simplicity' +
+                'of your life.. Why is it all so complicated?',
             locations: [{
                 name: 'Starcups',
                 address: '123 Hupe Street, Yeading, RG4 1PS',
