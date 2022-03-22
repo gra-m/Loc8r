@@ -98,15 +98,10 @@ const locationInfo = (req, res) => {
 };
 
 /*GET addReview*/
-const addReview = (req, res) => res.render('add-review', {
-    title: 'What did you think?',
+const addReview = (req, res) => res.render('location-review-form', {
+    title: 'Review Starcups on Loc8r',
     pageHeader: {
-        title: `Review`,
-        strapline: '',
-    },
-    otherContent: {},
-    location: {
-        name: 'Starcups'
+        title: `Review StarCups`,
     }
 });
 
