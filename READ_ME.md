@@ -83,6 +83,12 @@ Finished @ [a126cfe](https://github.com/gra-m/Loc8r/commit/a126cfe332a62fd6bc81a
 *I was thinking to myself -- different schemas/tables!* But:
 ![img.png](img.png)
 
+###Compiling a MongoDB model from mongoose schema:
+follows this pattern:
+mongoose.model('modelname', 'schemaToUse', 'MongoDBCollectionIfItAlreadyExixts');
+
+so this line was added below the schema definition:
+mongoose.model('location', locationSchema);
 
 * npm i mongoose
 * 
