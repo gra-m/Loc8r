@@ -79,6 +79,11 @@ Finished @ [a126cfe](https://github.com/gra-m/Loc8r/commit/a126cfe332a62fd6bc81a
 <a id="2"></a>
 ##Chapter 4:
 
+###Relational vs Document database
+*I was thinking to myself -- different schemas/tables!* But:
+![img.png](img.png)
+
+
 * npm i mongoose
 * 
 
