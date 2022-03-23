@@ -29,10 +29,18 @@ On: March 8th
 
 MongoDb:
 * mongosh 
-* db.shutdownServer()
+* db.shutdownServer() (restart service to use again)
 * db.hello()
 * db.serverStatus()
 * db.stats()
+  * close connection from cl:
+  * Type .exit, exit, or exit().
+    Type quit or quit().
+    Press Ctrl + D.
+    Press Ctrl + C twice.
+
+Windows
+* window r -> services.msc -> restart mongo
 
 
 ##Remember
