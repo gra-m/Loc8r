@@ -68,3 +68,4 @@ locationSchema.index({coords: '2dsphere'}) // define the path 'coords' as having
 // longitude -180 to 180 THEN latitude -90 to 90
 
 mongoose.model('location', locationSchema);
+
