@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 
 
 
-//Define connection string
-const dbURI = 'mongodb://127.0.0.1:27017/Loc8r';
+//LOCAL CONNECTION Initial Mongo setUP
+//const dbURI = 'mongodb://127.0.0.1:27017/Loc8r';
+
+//INITIAL REMOTE CONNECTION:
+const dbURI = 'mongodb+srv://loc8remUser:13n4Q0XPXSzgF3uz@juice-learnin-mongo.3m8qv.mongodb.net/loc8rem?retryWrites=true&w=majority'
     mongoose.connect(dbURI);
 
     //Monitor Mongoose connection events

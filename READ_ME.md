@@ -106,7 +106,7 @@ On: March 8th
 * replace a document and whatever it represents with just one key value pair:
   * db.users.replaceOne({ _id: objectId(etc.)}, {name: "John"})
 
-####DELETEONE/MANY
+####DELETEONE/MANY/PULL/Update to empty
 
 *db.users.deleteOne({ _id: objectId(etc.)})
 
@@ -114,6 +114,15 @@ On: March 8th
 
 *db.users.deleteMany({ age: { $exists : false}})
 
+*db.locations.updateOne({name: "Warkers"}, {$set: {reviews:""}})
+###Remove specific nested object:
+
+* db.locations.updateOne({_id: ObjectId("623cfefd6235bb5e8b97ed10")}, {$pull:{reviews: {_id: ObjectId("623ec685a0f028dc56320feb")}}})
+The above worked but then failed when I later tried to remove an extra opening times object:
+![img_2.png](img_2.png)
+
+##$UNSET used instead.
+* db.locations.updateOne({_id: ObjectId("623cffab6235bb5e8b97ed11")}, {$unset: { reviews: {_id: ObjectId("623ed428a0f028dc56320ffc")}}})
 ####Windows
 * window r -> services.msc -> restart mongo
 
@@ -211,7 +220,7 @@ insertedId: ObjectId("623b1d0e767cc2bbc6d49c83")
 ####ADDING SUB DOCUMENTS to existing document
 
 Push new object (subdocuments must be given own _id: objectId())
-db.users.insertOne({name: "Denzel-nee"}, { $push: {_id: ObjectId(), rating: 5}})
+db.users.updateOne({name: "Denzel-nee"}, { $push: {_id: ObjectId(), rating: 5}})
 
 * db.locations.insertOne({name: "Starcups"}, { $push: { reviews:{ author: "Jesse Watters", _id: ObjectId(), rating: 5, timestamp: new Date("May 15, 2022"), reviewText:"Order the fish fingers, they are to die for" }}})
 
@@ -219,7 +228,7 @@ db.users.insertOne({name: "Denzel-nee"}, { $push: {_id: ObjectId(), rating: 5}})
 2. Create users collection and first document
    1. db.users.insertOne({name: "humphrey", reviews: [{ _id: ObjectId(), timestamp: new Date("Mar 14, 2022")}]})
 3. Push a new review
-4. db.users.update({name: "humphrey"}, { $push: {reviews: {_id: ObjectId(), timestamp: new Date("Apr 15, 2022)}}})
+4. db.users.updateOne({name: "humphrey"}, { $push: {reviews: {_id: ObjectId(), timestamp: new Date("Apr 15, 2022)}}})
     
 
 

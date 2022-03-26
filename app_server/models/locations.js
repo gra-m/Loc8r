@@ -67,5 +67,6 @@ const locationSchema = new mongoose.Schema({
 locationSchema.index({coords: '2dsphere'}) // define the path 'coords' as having a '2dsphere' index
 // longitude -180 to 180 THEN latitude -90 to 90
 
-mongoose.model('location', locationSchema);
+// This is compiling model from schema
+mongoose.model('Location', locationSchema, 'locations');
 
